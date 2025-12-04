@@ -1,0 +1,417 @@
+/* ==================== ST. LAWRENCE COUNTY LANDING PAGE STYLES ==================== */
+/* CSS Stylesheet for Responsive Landing Page Project */
+
+/* ==================== CSS RESET & BASE STYLES ==================== */
+/* TODO: These base styles are provided - understand what they do */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #FFFFFF;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==================== COLOR VARIABLES ==================== */
+/* TODO: These CSS custom properties store the St. Lawrence County color scheme */
+:root {
+    --primary-blue: #003366;
+    --secondary-blue: #0066CC;
+    --accent-gold: #FFB81C;
+    --light-gray: #F5F5F5;
+    --dark-gray: #333333;
+    --white: #FFFFFF;
+}
+
+/* ==================== CONTAINER ==================== */
+c/* TODO: This container centers content and sets max-width */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== NAVIGATION BAR STYLES ==================== */
+/* TODO: Style the navigation bar using Flexbox */
+/* Requirements:
+   - Use Flexbox for layout
+   - Horizontal menu items on desktop
+   - Responsive design for mobile
+   - Use the St. Lawrence County color scheme */
+
+.navbar {
+    background-color: var(--primary-blue);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu li a {
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: var(--accent-gold);
+    
+}
+
+/* ==================== HERO SECTION STYLES ==================== */
+/* TODO: Style the hero sections */
+/* Requirements:
+   - Full width responsive images
+   - Overlaid content (heading, text, button)
+   - Use relative/absolute positioning */
+
+.hero {
+    position: relative;    
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;    
+    height: 100%;    
+    object-fit: cover;
+    object-position: center;  
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==================== BUTTON STYLES ==================== */
+/* TODO: Create reusable button styles */
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #E5A818;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #0052A3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================== CARDS SECTION ==================== */
+/* TODO: Style the cards section container */
+
+.cards-section {
+    padding: 4rem 0;
+    background-color: var(--light-gray);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 3rem;
+}
+
+/* ==================== CARDS GRID ==================== */
+/* TODO: Create responsive grid using CSS Grid */
+/* Requirements:
+   - 1 column on mobile
+   - 2 columns on tablet (768px+)
+   - 3 columns on desktop (1024px+) */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* ==================== INDIVIDUAL CARD STYLES ==================== */
+/* TODO: Style each card */
+
+.card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color:var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    color:var(--dark-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* ==================== FOOTER STYLES ==================== */
+/* TODO: Style the footer using CSS Grid */
+
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 3rem 0;
+    margin-top: 2rem;
+}
+
+/* ==================== FOOTER GRID ==================== */
+/* TODO: Create responsive grid for footer sections */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* ==================== FOOTER NAVIGATION ==================== */
+/* TODO: Style footer navigation links */
+
+.footer-nav ul {
+
+}
+
+.footer-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav a {
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-gold);
+}
+
+/* ==================== FOOTER COPYRIGHT & DISCLAIMER ==================== */
+/* TODO: These sections can use default styling or customize as desired */
+
+.footer-copyright p,
+.footer-disclaimer p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* ==================== FOOTER CONTACT FORM ==================== */
+/* TODO: Style the contact form */
+
+.footer-contact form {
+    display: flex;    
+    flex-direction: column;
+}
+
+.footer-contact label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.footer-contact input,
+.footer-contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #777;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.footer-contact textarea {
+    min-height: 100px; 
+    resize: vertical;
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+/* TODO: Add responsive breakpoints */
+
+/* ========== TABLET (768px and up) ========== */
+@media screen and (min-width: 768px) {
+    
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-content h1 {
+        font-size: 3.5rem;    
+    }
+    
+}
+
+/* ========== DESKTOP (1024px and up) ========== */
+@media screen and (min-width: 1024px) {
+
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+    
+    /* TODO: Change footer grid to 4 columns */
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* TODO: Increase hero heading size */
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+    
+}
+
+/* ==================== NOTES FOR STUDENTS ==================== */
+/*
+
+HELPFUL CSS TIPS:
+
+1. FLEXBOX QUICK REFERENCE:
+   display: flex;              - Creates flex container
+   flex-direction: row;        - Arranges items horizontally
+   justify-content: center;    - Centers items horizontally
+   align-items: center;        - Centers items vertically
+   gap: 20px;                  - Space between items
+
+2. CSS GRID QUICK REFERENCE:
+   display: grid;                          - Creates grid container
+   grid-template-columns: 1fr 1fr 1fr;     - 3 equal columns
+   grid-template-columns: repeat(3, 1fr);  - Same as above
+   gap: 20px;                              - Space between grid items
+
+3. RESPONSIVE DESIGN:
+   - Start with mobile styles (default)
+   - Add tablet styles at 768px
+   - Add desktop styles at 1024px
+   - Test by resizing browser window
+
+4. POSITIONING:
+   position: relative;   - Normal position, allows absolute children
+   position: absolute;   - Removes from flow, positions relative to parent
+   position: sticky;     - Sticks to viewport when scrolling
+
+5. COLOR USAGE:
+   Use var(--primary-blue) to reference CSS custom properties
+   Example: background-color: var(--primary-blue);
+
+6. TESTING YOUR WORK:
+   - Check navigation at different screen sizes
+   - Test hero images for responsiveness
+   - Verify grid changes from 1 to 2 to 3 columns
+   - Test hover effects on cards and buttons
+   - Try the contact form
+
+*/
